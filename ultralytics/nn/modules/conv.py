@@ -93,11 +93,11 @@ class DWConvTranspose2d(nn.ConvTranspose2d):
         super().__init__(c1, c2, k, s, p1, p2, groups=math.gcd(c1, c2))
 
 
-class ConvTranspose(nn.Module):
+class ConvTranspose(nn.Module):                       #############################
     """Convolution transpose 2d layer."""
     default_act = nn.SiLU()  # default activation
 
-    def __init__(self, c1, c2, k=2, s=2, p=0, bn=True, act=True):
+    def __init__(self, c1, c2, k=2, s=2, p=0, bn=True, act=True):                        ##s=1
         """Initialize ConvTranspose2d layer with batch normalization and activation function."""
         super().__init__()
         self.conv_transpose = nn.ConvTranspose2d(c1, c2, k, s, p, bias=not bn)
